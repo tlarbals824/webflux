@@ -29,6 +29,11 @@ dependencies {
     // r2dbc mysql
     implementation("io.asyncer:r2dbc-mysql:0.9.2")
 
+    // jpa
+//    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    // jpa mysql
+//    runtimeOnly 'com.mysql:mysql-connector-j'
+
     // test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'io.projectreactor:reactor-test'
@@ -36,6 +41,9 @@ dependencies {
     // lombok
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-mustache'
 
     if (System.getProperty("os.arch") == "aarch64" && System.getProperty("os.name") == "Mac OS X") {
         runtimeOnly("io.netty:netty-resolver-dns-native-macos::osx-aarch_64")
