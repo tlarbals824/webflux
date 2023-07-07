@@ -16,6 +16,10 @@ public class PostController {
 
     private final PostService postService;
 
+    /**
+     * 리팩터링 전 : 연관관계 1개, 1000개 데이터 조회시간 : 50s759ms, 개당 평균 조회 시간 : 42ms/data
+     *
+     */
     @GetMapping()
     public Flux<PostInfoResponse> getPostListByUserId(@RequestParam Long userId){
         return postService.getPostListByUserId(userId);
@@ -30,10 +34,7 @@ public class PostController {
         return postService.createPost(request);
     }
 
-    /**
-     * 리팩터링 전 : 연관관계 1개, 1000개 데이터 조회시간 : 50s759ms, 개당 평균 조회 시간 : 42ms/data
-     *
-    */
+
     @GetMapping("/info")
     public Mono<PostInfoResponse> getPostByPostId(@RequestParam Long postId){
         return postService.getPostByPostId(postId);
