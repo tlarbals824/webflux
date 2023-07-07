@@ -37,11 +37,16 @@ CREATE TABLE if not exists POST(
 
 * 1000 데이터 입력 : 총 시간(15s661ms), 평균 시간(7ms/data)
 * 1000 데이터 조회 1000번 반복 : 총 시간(50s759ms), 평균 시간(42ms/data)
+* 약 37명의 사용자가 동시 요청보내기 시작하면서 응답시간이 길어짐
+
+![테스트](img/webfluxR2dbc.png)
 
 ### JPA
 
 * 1000 데이터 입력 : 총 시간(17s904ms), 평균 시간(8ms/data)
 * 1000 데이터 조회 1000번 반복 : 총 시간(23s898ms), 평균 시간(15ms/data)
+
+![테스트](img/webfluxJpa.png)
 
 ## 결론 
 
