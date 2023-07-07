@@ -22,12 +22,24 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
+    // webflux
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
+    // r2dbc
+    implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
+    // r2dbc mysql
+    implementation("io.asyncer:r2dbc-mysql:0.9.2")
+
+    // test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'io.projectreactor:reactor-test'
+
+    // lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    if (System.getProperty("os.arch") == "aarch64" && System.getProperty("os.name") == "Mac OS X") {
+        runtimeOnly("io.netty:netty-resolver-dns-native-macos::osx-aarch_64")
+    }
 }
 
 tasks.named('test') {
