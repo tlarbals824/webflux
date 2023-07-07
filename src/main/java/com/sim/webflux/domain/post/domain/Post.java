@@ -4,8 +4,10 @@ import com.sim.webflux.common.entity.BaseEntity;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.PersistenceCreator;
+import org.springframework.data.relational.core.mapping.Table;
 
-//@Table("POST")
+@Table("POST")
 @Getter
 //@Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -20,7 +22,7 @@ public class Post extends BaseEntity {
     private Long userId;
 
 
-//    @PersistenceCreator
+    @PersistenceCreator
     public Post(Long id, String title, String description, Long viewCount, Long userId) {
         this.id = id;
         this.title = title;

@@ -23,8 +23,6 @@ public class PostR2dbcService implements PostService {
 
     public Flux<PostInfoResponse> getPostListByUserId(Long userId) {
         return postR2dbcRepository.findAllByUserId(userId)
-                .doOnSubscribe()
-                .cache()
                 .flatMap(post -> Flux.just(PostInfoResponse.from(post)));
     }
 

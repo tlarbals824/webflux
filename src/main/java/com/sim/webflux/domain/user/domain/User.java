@@ -4,8 +4,9 @@ import com.sim.webflux.common.entity.BaseEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.PersistenceCreator;
+import org.springframework.data.relational.core.mapping.Table;
 
-//@Table("USER")
+@Table("USER")
 @Getter
 //@Entity
 @NoArgsConstructor
