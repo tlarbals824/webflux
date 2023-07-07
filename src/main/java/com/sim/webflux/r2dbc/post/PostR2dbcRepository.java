@@ -1,4 +1,4 @@
-package com.sim.webflux.domain.post.repository;
+package com.sim.webflux.r2dbc.post;
 
 import com.sim.webflux.domain.post.domain.Post;
 import org.springframework.data.r2dbc.repository.R2dbcRepository;

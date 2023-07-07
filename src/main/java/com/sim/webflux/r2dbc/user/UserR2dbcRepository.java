@@ -1,4 +1,4 @@
-package com.sim.webflux.domain.user.repository;
+package com.sim.webflux.r2dbc.user;
 
 import com.sim.webflux.domain.user.domain.User;
 import org.springframework.data.r2dbc.repository.R2dbcRepository;
