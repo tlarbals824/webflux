@@ -17,8 +17,9 @@ public class PostController {
     private final PostService postService;
 
     /**
-     * 리팩터링 전 : 연관관계 1개, 1000개 데이터 조회시간 : 50s759ms, 개당 평균 조회 시간 : 42ms/data
-     *
+     * MySQL 기준
+     * R2DBC : 1000개 데이터 조회시간 : 53s251ms, 개당 평균 조회 시간 : 44ms/data
+     * JPA : 1000개 데이터 조회시간 : 23s898ms, 개당 평균 조회 시간 : 15ms/data
      */
     @GetMapping()
     public Flux<PostInfoResponse> getPostListByUserId(@RequestParam Long userId){
@@ -26,8 +27,9 @@ public class PostController {
     }
 
     /**
-     * 리팩터링 전 : 연관관계 1개, 1000개 데이터 입력시간 : 21s154ms, 개당 평균 입력 시간 : 6ms/data
-     *
+     * MySQL 기준
+     * R2DBC : 1000개 데이터 입력시간 : 15s661ms, 개당 평균 입력 시간 : 7ms/data
+     * JPA : 1000개 데이터 입력시간 : 17s904ms, 개당 평균 입력 시간 : 8ms/data
      */
     @PostMapping()
     public Mono<PostCreateResponse> createPost(@RequestBody PostCreateRequest request){
