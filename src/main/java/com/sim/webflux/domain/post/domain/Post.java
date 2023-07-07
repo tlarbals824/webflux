@@ -1,16 +1,18 @@
 package com.sim.webflux.domain.post.domain;
 
 import com.sim.webflux.common.entity.BaseEntity;
+import lombok.AccessLevel;
 import lombok.Getter;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.PersistenceCreator;
-import org.springframework.data.relational.core.mapping.Table;
+import lombok.NoArgsConstructor;
 
-@Table("POST")
+//@Table("POST")
 @Getter
+//@Entity
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Post extends BaseEntity {
 
-    @Id
+//    @jakarta.persistence.Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @org.springframework.data.annotation.Id
     private Long id;
     private String title;
     private String description;
@@ -18,7 +20,7 @@ public class Post extends BaseEntity {
     private Long userId;
 
 
-    @PersistenceCreator
+//    @PersistenceCreator
     public Post(Long id, String title, String description, Long viewCount, Long userId) {
         this.id = id;
         this.title = title;
@@ -26,6 +28,8 @@ public class Post extends BaseEntity {
         this.viewCount = viewCount;
         this.userId = userId;
     }
+
+
 
     public Post(String title, String description, Long userId) {
         this(null, title,description, 0L, userId);

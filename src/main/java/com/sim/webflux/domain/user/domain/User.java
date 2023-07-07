@@ -2,14 +2,16 @@ package com.sim.webflux.domain.user.domain;
 
 import com.sim.webflux.common.entity.BaseEntity;
 import lombok.Getter;
-import org.springframework.data.annotation.Id;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.PersistenceCreator;
-import org.springframework.data.relational.core.mapping.Table;
 
-@Table("USER")
+//@Table("USER")
 @Getter
+//@Entity
+@NoArgsConstructor
 public class User extends BaseEntity {
-    @Id
+//    @jakarta.persistence.Id
+    @org.springframework.data.annotation.Id
     private Long id;
     private String username;
     private String password;
