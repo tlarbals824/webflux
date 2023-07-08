@@ -33,6 +33,11 @@ CREATE TABLE if not exists POST(
 
 조건 : postman runs를 이용한 테스트, 1000건 데이터 입력 후 1000건 데이터 조회 1000번 반복, user,post 연관관계 설정
 
+* CPU : M1 pro 8core
+* RAM : 4GB
+* DB : MySQL
+
+
 ### R2DBC
 
 * 1000 데이터 입력 : 총 시간(15s661ms), 평균 시간(7ms/data)
